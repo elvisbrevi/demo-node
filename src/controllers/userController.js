@@ -1,4 +1,4 @@
-import validator from 'express-validator';
+import bcrypt from 'bcrypt';
 import userService from "../services/userService.js";
 
 const getAllUsers = (req, res) => {
@@ -15,8 +15,11 @@ const createUser = (req, res) => {
         password: body.password,
     }
 
-    const createdUser = userService.createUser(newUser);
-    res.status(201).send( { status: "Ok", data: createdUser });
+    bcrypt.hash(newUser.password, 10, function(err, hash) {
+        newUser.password = hash;
+        const createdUser = userService.createUser(newUser);
+        res.status(201).send( { status: "Ok", data: createdUser });
+    });
 }
 
 export default {

@@ -7,6 +7,14 @@
     {
       "mail": "Elv2323@lsls.com",
       "password": "10-10-2010"
+    },
+    {
+      "mail": "carlos@lsls.com",
+      "password": "10-10-2010"
+    },
+    {
+      "mail": "rr@lsls.com",
+      "password": "$2b$10$dizwrkIH4aidgBxsEvXr9u645lnFdJ5pyolR7SajTbkEZ8jl7jh.C"
     }
   ]
 }
